@@ -21,14 +21,17 @@ export class AppComponent {
   constructor(private formBuilder: FormBuilder) {
 
     /* Declare Reactive Form Group here */
-    this.paymentForm = this.formBuilder.group({
+    
+
+  }
+  ngOnInit() {
+      this.paymentForm = this.formBuilder.group({
         cHolder: ['', Validators.required],
         cNumber: ['', Validators.required],
         exMonth: ['', [Validators.required, Validators.email]],
         exYear: ['', [Validators.required, Validators.minLength(6)]],
         cvvCvc: ['', [Validators.required, Validators.minLength(6)]]
     });
-
   }
 
   submitForm() {
