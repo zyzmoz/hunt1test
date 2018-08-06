@@ -22,10 +22,11 @@ export class AppComponent {
 
     /* Declare Reactive Form Group here */
     this.paymentForm = this.formBuilder.group({
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6)]]
+        cHolder: ['', Validators.required],
+        cNumber: ['', Validators.required],
+        exMonth: ['', [Validators.required, Validators.email]],
+        exYear: ['', [Validators.required, Validators.minLength(6)]],
+        cvvCvc: ['', [Validators.required, Validators.minLength(6)]]
     });
 
   }
