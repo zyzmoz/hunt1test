@@ -30,7 +30,7 @@ export class AppComponent {
         cNumber: ['', Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
         exMonth: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
         exYear: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
-        cvvCvc: ['', [Validators.required, Validators.minLength(6)]]
+        cvvCvc: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern(/^-?(0|[1-9]\d*)?$/)]
     });
   }
 
