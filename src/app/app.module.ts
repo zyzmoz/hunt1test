@@ -6,6 +6,12 @@ import {AppComponent} from './app.component';
 
 @NgModule({
   /* set respective calls to components, services, etc here */
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
   declarations: [AppComponent]

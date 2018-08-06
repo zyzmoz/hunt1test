@@ -1,34 +1,34 @@
 <div>
-  <form [formGroup]="paymentForm">
+  <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{ 'has-error': submitted && f.cHolder.errors }">
       <label>Name on Card</label>
-      <input formControlName="cHolder" class="form-control" type="text" placeholder="John Krane">
-      <div class="alert alert-danger">Invalid Cardholder Name.</div>
+      <input formControlName="cHolder" class="form-control" type="text" placeholder="John Krane" >
+      <div *ngIf="submitted && f.cHolder.errors" class="alert alert-danger">Invalid Cardholder Name.</div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{ 'has-error': submitted && f.cNumber.errors }">
       <label>Card Number</label>
       <input formControlName="cNumber" class="form-control" type="text" placeholder="1234123412341234">
-      <div class="alert alert-danger">Invalid Card Number.</div>
+      <div *ngIf="submitted && f.cNumber.errors"  class="alert alert-danger">Invalid Card Number.</div>
     </div>
 
-    <div class="form-group expiry">
+    <div class="form-group expiry" [ngClass]="{ 'has-error': submitted && (f.exMonth.errors ||f.exYear.errors) }">
       <label>Date of Expiration</label>
       <input formControlName="exMonth" class="form-control month" type="text" placeholder="07">
       <input formControlName="exYear" class="form-control year" type="text" placeholder="2017">
-      <div class="alert alert-danger">Invalid Date of Expiration.</div>
+      <div *ngIf="submitted && (f.exMonth.errors ||f.exYear.errors)"  class="alert alert-danger">Invalid Date of Expiration.</div>
     </div>
 
-    <div class="form-group cvc">
+    <div class="form-group cvc" [ngClass]="{ 'has-error': submitted && f.cvvCvc.errors }">
       <label>CVV/CVC</label>
       <input formControlName="cvvCvc" class="form-control" type="text" placeholder="123">
-      <div class="alert alert-danger">Invalid CVV / CVC Number.</div>
+      <div *ngIf="submitted && f.cvvCvc.errors" class="alert alert-danger">Invalid CVV / CVC Number.</div>
     </div>
 
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-    <h3 class="center-block text-center"><!-- Display the message here --></h3>
+    <h3 class="center-block text-center">{{paymentInvalid()}}</h3>
   </form>
 </div>
