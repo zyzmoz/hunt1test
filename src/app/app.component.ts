@@ -14,7 +14,7 @@ export class AppComponent {
  
   constructor(private formBuilder: FormBuilder) {
 
-    /* Declare Reactive Form Group here */
+    /* Declare Reactive Form Group here :D */
     this.paymentForm = this.formBuilder.group({
       nameOnCard: ['', [Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]],
       cardNumber: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]*$/)]],
