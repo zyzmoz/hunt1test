@@ -9,6 +9,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AppComponent {
   paymentForm: FormGroup;
   displayMessage: string;
+  
+  card: any = {
+      cHolder: '',
+      cNumber: '',
+      exMonth: '',
+      exYear: '',
+      cvvCvc: '',
+  }
 
   constructor() {
 
