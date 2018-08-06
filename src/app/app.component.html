@@ -3,26 +3,26 @@
 
     <div class="form-group">
       <label>Name on Card</label>
-      <input class="form-control" type="text" placeholder="John Krane">
+      <input formControlName="cHolder" class="form-control" type="text" placeholder="John Krane">
       <div class="alert alert-danger">Invalid Cardholder Name.</div>
     </div>
 
     <div class="form-group">
       <label>Card Number</label>
-      <input  class="form-control" type="text" placeholder="1234123412341234">
+      <input formControlName="cNumber" class="form-control" type="text" placeholder="1234123412341234">
       <div class="alert alert-danger">Invalid Card Number.</div>
     </div>
 
     <div class="form-group expiry">
       <label>Date of Expiration</label>
-      <input class="form-control month" type="text" placeholder="07">
-      <input class="form-control year" type="text" placeholder="2017">
+      <input formControlName="exMonth" class="form-control month" type="text" placeholder="07">
+      <input formControlName="exYear" class="form-control year" type="text" placeholder="2017">
       <div class="alert alert-danger">Invalid Date of Expiration.</div>
     </div>
 
     <div class="form-group cvc">
       <label>CVV/CVC</label>
-      <input class="form-control" type="text" placeholder="123">
+      <input formControlName="cvvCvc" class="form-control" type="text" placeholder="123">
       <div class="alert alert-danger">Invalid CVV / CVC Number.</div>
     </div>
 
