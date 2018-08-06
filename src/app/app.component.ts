@@ -26,9 +26,9 @@ export class AppComponent {
   }
   ngOnInit() {
      this.paymentForm = this.formBuilder.group({
-        cHolder: ['', Validators.required],
-        cNumber: ['', Validators.required],
-        exMonth: ['', [Validators.required, Validators.email]],
+        cHolder: ['', Validators.required, Validators.pattern(/^[a-zA-Z]+/)],
+        cNumber: ['', Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]+/)],
+        exMonth: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
         exYear: ['', [Validators.required, Validators.minLength(6)]],
         cvvCvc: ['', [Validators.required, Validators.minLength(6)]]
     });
