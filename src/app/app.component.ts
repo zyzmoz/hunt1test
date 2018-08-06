@@ -15,7 +15,7 @@ export class AppComponent {
       cNumber: '',
       exMonth: '',
       exYear: '',
-      cvvCvc: '',
+      cvvCvc: ''
   }
 
   constructor() {
