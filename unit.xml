@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<testsuite name="HeadlessChrome 68.0.3440 (Windows 10.0.0)" package="unit" timestamp="2018-08-06T14:15:40" id="0" hostname="Daniel-PC" tests="6" errors="0" failures="0" time="0.443">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/68.0.3440.84 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent expiration date validation should work" time="0.05" classname="unit.AppComponent"/>
+  <testcase name="AppComponent cvv/cvc validation should work" time="0.054" classname="unit.AppComponent"/>
+  <testcase name="AppComponent submit button should display the success message" time="0.064" classname="unit.AppComponent"/>
+  <testcase name="AppComponent submit button should display the failure message" time="0.066" classname="unit.AppComponent"/>
+  <testcase name="AppComponent form should be invalid when empty" time="0.144" classname="unit.AppComponent"/>
+  <testcase name="AppComponent card number validation should work" time="0.065" classname="unit.AppComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

@@ -11,47 +11,33 @@ export class AppComponent {
   displayMessage: string;
   submitted = false;
 
-  card: any = {
-    cHolder: '',
-    cNumber: '',
-    exMonth: '',
-    exYear: '',
-    cvvCvc: ''
-  }
-
+ 
   constructor(private formBuilder: FormBuilder) {
 
     /* Declare Reactive Form Group here */
-
-
-  }
-  ngOnInit() {
     this.paymentForm = this.formBuilder.group({
-      cHolder: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
-      cNumber: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]*$/)]],
-      exMonth: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]*$/)]],
-      exYear: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]*$/)]],
-      cvvCvc: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern(/^[0-9]*$/)]]
+      nameOnCard: ['', [Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]],
+      cardNumber: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]*$/)]],
+      expirationMonth: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]*$/)]],
+      expirationYear: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(/^[0-9]*$/)]],
+      cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern(/^[0-9]*$/)]]
     });
-  }
 
+  }
+ 
   get f() { return this.paymentForm.controls; }
 
   submitForm() {
-    this.submitted = true;
-    if (this.paymentForm.invalid) {
-      console.log(this.paymentForm);
+    this.submitted = true;   
+       
+    if(this.paymentForm.invalid){
+      this.displayMessage = "Payment Failed!";
       return;
     }
-    /* Change the display message on button click / submit form */
+    
+    
+    this.displayMessage = "Payment Successful!";
   }
 
-  paymentInvalid() {
-    if (!this.submitted)
-      return;
-    if(!this.paymentForm.invalid)
-      return "Payment Successful!";
-    if(this.paymentForm.invalid)
-      return "Payment Failed!";
-  }
+  
 }
